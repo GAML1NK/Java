@@ -1,0 +1,58 @@
+import java.util.Arrays;
+import java.util.Random;
+public class ARR_1 {
+
+	public static void main(String[] args) {
+		int temp;
+		Random K = new Random();
+		int[][] dizi =new int[3][3];
+		for(int i = 0; i < 3 ;i++)
+		  {
+		      for(int j = 0 ; j < 3 ;j++)
+		      {
+		         dizi[i][j]=K.nextInt(20);
+		         
+		         System.out.print(dizi[i][j]+"\t");
+		      }
+		      System.out.print("\n");  }
+		System.out.println("Yukarıda dizinin orjinal halini görmektesiniz... ");  
+		System.out.print("\n");
+		System.out.println("------------------------------------------------");
+		
+		System.out.println("Aşağıda ise dizinin Küçükten Büyüğe doğru sıralanmış halini görmektesiniz...");  
+		
+		for (int row = 0; row < dizi.length; row++) { // satırların sıralanması 
+            for (int i = 0; i < dizi[row].length; i++) {
+                for (int j = i + 1; j < dizi[row].length; j++) {
+                    if (dizi[row][i] > dizi[row][j]) {
+                        
+                        temp = dizi[row][i];
+                        dizi [row][i] = dizi [row][j];
+                        dizi [row][j] = temp;
+                    }
+                }
+            }
+        }
+		 for (int col = 0; col < dizi[0].length; col++) { //sütünların sıralanmaı
+	             
+	            for (int i = 0; i < dizi .length; i++) {
+	                for (int j = i + 1; j < dizi .length; j++) {
+	                    if (dizi [i][col] > dizi [j][col]) {
+	                                                        
+	                        temp = dizi [i][col];
+	                        dizi [i][col] = dizi [j][col];
+	                        dizi [j][col] = temp;
+	                    }
+	                }
+	            }
+	        }
+		for (int i = 0; i < dizi.length; i++) {
+            for (int j = 0; j < dizi [i].length; j++) {
+                System.out.print(dizi [i][j] + " ");
+            }
+            System.out.println();
+        }
+		
+	}
+		
+}
